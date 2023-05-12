@@ -21,7 +21,7 @@ const CardList = ({date, budget}) => {
         if (date && budget && (date.startDate !== null && date.endDate !== null)) {
             const numbers_of_days = differenceInDays(new Date(date.endDate), new Date(date.startDate))
             const total_budget = parseInt(budget) / numbers_of_days
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/countries?budget=${total_budget}`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/countries?budget=${total_budget}`).then((res) => {
                 setBatchCalc(true)
                 setDays(numbers_of_days)
                 setCities(res.data)
@@ -34,7 +34,7 @@ const CardList = ({date, budget}) => {
 
         else if ((date != null && date.startDate != null && date.endDate != null) && (!budget || budget <= 0)) {
             const numbers_of_days = differenceInDays(new Date(date.endDate), new Date(date.startDate))
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/countries`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/countries`).then((res) => {
                 setCities(res.data)
                 setLoading(false)
                 setBatchCalc(true)
@@ -45,7 +45,7 @@ const CardList = ({date, budget}) => {
         }
 
         else if(budget) {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/countries?budget=${budget}`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/countries?budget=${budget}`).then((res) => {
                 setCities(res.data)
                 setLoading(false)
                 setBatchCalc(false)
@@ -55,7 +55,7 @@ const CardList = ({date, budget}) => {
         }
 
         else {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/countries`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/countries`).then((res) => {
                 setCities(res.data)
                 setLoading(false)
                 setBatchCalc(false)

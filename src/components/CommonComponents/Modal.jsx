@@ -28,7 +28,7 @@ const CustomModal = ({city}) => {
         setCityData({})
         setLoading(true)
         if (city !== null) {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/overview/${city.name}`).then((res) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/overview/${city.name}`).then((res) => {
                 console.log(res.data)
                 setLoading(false)
                 setCityData(res.data)
