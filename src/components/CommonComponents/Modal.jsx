@@ -2,21 +2,10 @@ import React, {useEffect, useState} from "react";
 import Loader from "react-loading";
 import axios from "axios";
 import capitalizeFirstLetter from "../../utils.js/capitalizeFirstLetter";
+import axiosClient from "../../services/axiosClient";
+
 import {format, parseISO} from "date-fns";
 import {Modal} from 'flowbite-react'
-
-const foodTest = [
-    {
-        "strMeal": "Egyptian Fatteh",
-        "strMealThumb": "https://www.themealdb.com/images/media/meals/rlwcc51598734603.jpg",
-        "idMeal": "52959"
-    },
-    {
-        "strMeal": "Egyptian Fatteh",
-        "strMealThumb": "https://www.themealdb.com/images/media/meals/rlwcc51598734603.jpg",
-        "idMeal": "52959"
-    },
-]
 
 const CustomModal = ({city}) => {
     const [loading, setLoading] = useState(true);
@@ -28,7 +17,7 @@ const CustomModal = ({city}) => {
         setCityData({})
         setLoading(true)
         if (city !== null) {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/trip/overview/${city.name}`).then((res) => {
+            axiosClient.get(`${process.env.REACT_APP_BACKEND_URL}/trip/overview/${city.name}`).then((res) => {
                 console.log(res.data)
                 setLoading(false)
                 setCityData(res.data)
