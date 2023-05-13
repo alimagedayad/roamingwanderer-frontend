@@ -56,9 +56,9 @@ const Card = ({city, days, batch, setCity}) => {
         <>
           {isHovered ? (
             <HoveredItem
-              income={city.income_level}
-              live={city.live_cost}
-              rent={city.rent_price}
+              food={city.food}
+              airfare={city.airfare}
+              accomodation={city.accommodation}
               batch={batch} 
               days={days}
             />
@@ -73,7 +73,7 @@ const Card = ({city, days, batch, setCity}) => {
 
 export default Card;
 
-const HoveredItem = ({income=1, live, rent, batch, days = 1}) => {
+const HoveredItem = ({food=1, airfare, accomodation, batch, days = 1}) => {
   return (
     <HoveredItemContainer style={{
       marginTop: "100px",
@@ -87,7 +87,7 @@ const HoveredItem = ({income=1, live, rent, batch, days = 1}) => {
             </AttributeNameWrapper>
             <IncomeLevelContainer>
               <P style={{ fontWeight: "100" }} fontSize={"20px"}>
-                {(days ? (income*days) : income)} USD
+                {(days ? (food*days) : food)} USD
               </P>
             </IncomeLevelContainer>
           </HoveredListItemContainer>
@@ -100,7 +100,7 @@ const HoveredItem = ({income=1, live, rent, batch, days = 1}) => {
             </AttributeNameWrapper>
             <IncomeLevelContainer>
               <P style={{ fontWeight: "100" }} fontSize={"20px"}>
-                {live} USD
+                {airfare} USD
               </P>
             </IncomeLevelContainer>
           </HoveredListItemContainer>
@@ -113,7 +113,7 @@ const HoveredItem = ({income=1, live, rent, batch, days = 1}) => {
             </AttributeNameWrapper>
             <IncomeLevelContainer>
               <P style={{ fontWeight: "100" }} fontSize={"20px"}>
-              {(days ? (rent*days) : rent)} USD
+              {(days ? (accomodation*days) : accomodation)} USD
               </P>
             </IncomeLevelContainer>
 
@@ -134,6 +134,7 @@ const HoveredItem = ({income=1, live, rent, batch, days = 1}) => {
 };
 
 const DefaultItem = ({ item, batch, days }) => {
+  console.log("item: ", item)
   const { capital, name, happiness_level, total_cost_per_day, language } = item;
   return (
     <>

@@ -17,11 +17,9 @@ export const CountryCreate = () => (
             <TextInput source="flag" required />
             <TextInput source="life_score" required />
             <TextInput source="happiness_level" required />
-            <NumberInput source="income_level" required />
-            <NumberInput source="live_cost" required />
-            <NumberInput source="rent_price" required />
-            <NumberInput source="total_score" required />
-            <NumberInput source="total_cost_per_day" required />
+            <NumberInput source="airfare" required />
+            <NumberInput source="food" required />
+            <NumberInput source="accommodation" required />
         </SimpleForm>
     </Create>
 )

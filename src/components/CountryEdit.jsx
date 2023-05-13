@@ -24,11 +24,9 @@ export const CountryEdit = () => {
                 <TextInput source="demonym" />
                 <TextInput source="flag" />
                 <TextInput source="happiness_level" />
-                <NumberInput source="income_level" />
-                <NumberInput source="live_cost" />
-                <NumberInput source="rent_price" />
-                <NumberInput source="total_score" />
-                <NumberInput source="total_cost_per_day" />
+                <NumberInput source="food" />
+                <NumberInput source="airfare" />
+                <NumberInput source="accommodation" />
             </SimpleForm>
         </Edit>
     )
