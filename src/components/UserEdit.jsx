@@ -7,7 +7,6 @@ export const UserEdit = () => (
         >
             <TextInput source="name" />
             <TextInput source="email" />
-            <TextInput source="password" />
         </SimpleForm>
     </Edit>
 );

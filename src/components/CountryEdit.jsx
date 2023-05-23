@@ -5,6 +5,15 @@ export const CountryEdit = () => {
         if(data.updatedAt) {
             delete data.updatedAt;
         }
+        
+        if (data.last_modified) {
+            delete data.last_modified;
+        }
+
+        if (data.total_cost_per_day) {
+            delete data.total_cost_per_day;
+        }
+        
         if(data.id) {
             delete data.id;
         }
