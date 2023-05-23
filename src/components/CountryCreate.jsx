@@ -25,7 +25,8 @@ export const CountryCreate = () => {
         return data;
     }
 
-    <Create transform={transform} mutationMode='pessimistic'>
+    return (
+        <Create transform={transform} mutationMode='pessimistic'>
         <SimpleForm>
             <TextInput source="name" required />
             <TextInput source="capital" required />
@@ -46,4 +47,5 @@ export const CountryCreate = () => {
             <NumberInput source="accommodation" required />
         </SimpleForm>
     </Create>
+    )
 }
