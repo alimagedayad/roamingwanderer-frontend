@@ -13,20 +13,21 @@ export const UserEdit = () => {
         if (data.createdAt) {
             delete data.createdAt;
         }
-        
+
         if(data.id) {
             delete data.id;
         }
 
         return data;
     }
-
-    <Edit mutationMode='pessimistic' transform={transform}>
-        <SimpleForm
-          sanitizeEmptyValues={false}
-        >
-            <TextInput source="name" />
-            <TextInput source="email" />
-        </SimpleForm>
-    </Edit>
-}
+    return (
+        <Edit mutationMode='pessimistic' >
+            <SimpleForm
+            sanitizeEmptyValues={false}
+            >
+                <TextInput source="name" />
+                <TextInput source="email" />
+            </SimpleForm>
+        </Edit>
+    )
+};
