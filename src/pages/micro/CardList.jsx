@@ -27,7 +27,6 @@ const CardList = ({date, budget}) => {
                 setCities(res.data)
                 setLoading(false)
               }).catch((err) => {
-                console.log(err)
                 setLoading(true)
               })
         }
@@ -40,7 +39,6 @@ const CardList = ({date, budget}) => {
                 setBatchCalc(true)
                 setDays(numbers_of_days)
               }).catch((err) => {
-                console.log(err)
             })        
         }
 
@@ -50,7 +48,6 @@ const CardList = ({date, budget}) => {
                 setLoading(false)
                 setBatchCalc(false)
               }).catch((err) => {
-                console.log(err)
               })
         }
 
@@ -60,7 +57,6 @@ const CardList = ({date, budget}) => {
                 setLoading(false)
                 setBatchCalc(false)
               }).catch((err) => {
-                console.log(err)
               })
         }
 

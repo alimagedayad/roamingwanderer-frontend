@@ -134,7 +134,6 @@ const HoveredItem = ({food=1, airfare, accomodation, batch, days = 1}) => {
 };
 
 const DefaultItem = ({ item, batch, days }) => {
-  console.log("item: ", item)
   const { capital, name, happiness_level, total_cost_per_day, language } = item;
   return (
     <>

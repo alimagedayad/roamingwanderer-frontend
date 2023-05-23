@@ -10,11 +10,6 @@ const axiosClient = axios.create({
 axiosClient.interceptors.request.use(async (config) => {
     const { accessToken, expiry } = JSON.parse(localStorage.getItem('oauth')) || {};
 
-    console.log("sent from interceptor: ", accessToken, expiry)
-    console.log("check1: ", accessToken != {})
-    console.log("check2: ", expiry != {})
-    console.log("check3: ", new Date(expiry) > new Date())
-
     if (accessToken != {} && expiry != {}  && (new Date(expiry) > new Date())) {
         config.headers.oauth_token = accessToken;
     }

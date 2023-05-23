@@ -18,12 +18,10 @@ const CustomModal = ({city}) => {
         setLoading(true)
         if (city !== null) {
             axiosClient.get(`${process.env.REACT_APP_BACKEND_URL}/trip/overview/${city.name}`).then((res) => {
-                console.log(res.data)
                 setLoading(false)
                 setCityData(res.data)
             }
             ).catch((err) => {
-                console.log(err)
                 setLoading(false)
             })
         }
