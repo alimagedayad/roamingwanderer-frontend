@@ -1,7 +1,27 @@
 import { Edit, SimpleForm, TextInput } from 'react-admin';
 
-export const UserEdit = () => (
-    <Edit mutationMode='pessimistic'>
+export const UserEdit = () => {
+    const transform = (data) => {
+        if(data.updatedAt) {
+            delete data.updatedAt;
+        }
+        
+        if (data.last_modified) {
+            delete data.last_modified;
+        }
+
+        if (data.createdAt) {
+            delete data.createdAt;
+        }
+        
+        if(data.id) {
+            delete data.id;
+        }
+
+        return data;
+    }
+
+    <Edit mutationMode='pessimistic' transform={transform}>
         <SimpleForm
           sanitizeEmptyValues={false}
         >
@@ -9,4 +29,4 @@ export const UserEdit = () => (
             <TextInput source="email" />
         </SimpleForm>
     </Edit>
-);
+}
